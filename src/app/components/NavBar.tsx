@@ -41,18 +41,6 @@ export default function NavBar({ className }: NavBarProps) {
                 </NavigationMenuItem>
               </ButtonPrimary>
             ))}
-            {/* <ButtonPrimary>
-              <NavigationMenuItem>
-                <NavigationMenuLink href="/about">About</NavigationMenuLink>
-              </NavigationMenuItem>
-            </ButtonPrimary>
-            <ButtonPrimary>
-              <NavigationMenuItem>
-                <NavigationMenuLink href="/projects">
-                  Projects
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-            </ButtonPrimary> */}
           </NavigationMenuList>
         </NavigationMenu>
       </div>
@@ -76,15 +64,6 @@ export default function NavBar({ className }: NavBarProps) {
                   <a href={page.href}>{page.name}</a>
                 </ButtonPrimary>
               ))}
-              {/* <ButtonPrimary>
-                <a href="/about">About</a>
-              </ButtonPrimary>
-              <ButtonPrimary>
-                <a href="/projects">Projects</a>
-              </ButtonPrimary>
-              <ButtonPrimary>
-                <a href="/contact">Contact</a>
-              </ButtonPrimary> */}
             </div>
           </SheetContent>
         </Sheet>
