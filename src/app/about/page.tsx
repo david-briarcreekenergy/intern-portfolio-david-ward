@@ -12,9 +12,6 @@ export default function About() {
 
   const currently = `Currently, I am working on GameDay Sports, a Little League Baseball tournament management application.  It will allow the client to manage teams, players, schedules, and scores for multiple tournaments.  It is being built with Next.js front-end and express.js backend .  The application is still in the early stages of development, but I am excited about the potential it has to streamline tournament management for my client.`;
 
-  const x =
-    'I am seeking new opportunities to further develop my skills and contribute to innovative projects. I am open to both full-time positions and freelance work, and I am eager to connect with like-minded professionals in the industry.';
-
   const techStack = [
     '/logos/react.jpg',
     '/logos/Nextjs.png',
@@ -41,23 +38,18 @@ export default function About() {
         </div>
 
         {/* Tech Stack Section */}
-        <div className="max-w-2xl space-y-4">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-            Tech Stack
-          </h2>
-          <div className="flex flex-wrap items-center justify-center gap-6">
-            {techStack.map((logo, index) => (
-              <div key={index} className="flex items-center justify-center p-2">
-                <Image
-                  src={logo}
-                  alt={`Tech logo ${index + 1}`}
-                  width={64}
-                  height={64}
-                  className="object-contain"
-                />
-              </div>
-            ))}
-          </div>
+        <div className="flex flex-wrap items-center justify-center gap-6">
+          {techStack.map((logo, index) => (
+            <div key={index} className="flex items-center justify-center p-2">
+              <Image
+                src={logo}
+                alt={`Tech logo ${index + 1}`}
+                width={64}
+                height={64}
+                className="object-contain"
+              />
+            </div>
+          ))}
         </div>
       </main>
     </div>
