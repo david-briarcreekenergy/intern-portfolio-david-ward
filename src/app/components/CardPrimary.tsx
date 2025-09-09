@@ -40,7 +40,7 @@ export default function CardPrimary({
       )}
       {cardFooter && (
         <CardFooter>
-          <p className="text-sm text-gray-500">{cardFooter}</p>
+          <p className="text-sm text-justify text-gray-500">{cardFooter}</p>
         </CardFooter>
       )}
     </Card>
