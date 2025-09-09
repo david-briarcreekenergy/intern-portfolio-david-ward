@@ -4,6 +4,8 @@ export default function Home() {
   const content = `I am a blacksmith.  Code I write is for the benefit of my employer/client.  The joy of the job comes when they say to me "Do you know how much easier my job is because of your work?" \n\n
   I consider the fact that much of my work is invisible to be a compliment.  It means I have done my job well.  I am not the star of the show, but the enabler of the star of the show.  I am adaptable, collaborative, diligent, tenacious, innovative, and on time.`;
 
+  const whatDoYouNeededBuilt = `What do you need built?`;
+
   return (
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-[calc(100vh-108px)] p-8 pb-20 gap-16 sm:p-20 bg-cover bg-center bg-no-repeat bg-[url('/anvil.png')]">
       <main className="flex flex-col items-center row-start-2 gap-8 text-center">
@@ -23,6 +25,12 @@ export default function Home() {
             </p>
           ))}
         </div>
+
+        <section className="hero">
+          <h1 className="text-4xl font-bold text-green-500 md:text-6xl dark:text-white">
+            {whatDoYouNeededBuilt}
+          </h1>
+        </section>
       </main>
     </div>
   );
