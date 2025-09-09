@@ -19,6 +19,12 @@ interface NavBarProps {
   className?: string;
 }
 
+const pages = [
+  { name: 'About', href: '/about' },
+  { name: 'Projects', href: '/projects' },
+  { name: 'Contact', href: '/contact' },
+];
+
 export default function NavBar({ className }: NavBarProps) {
   return (
     <nav className="flex items-center justify-between w-full px-6 py-4">
@@ -26,7 +32,16 @@ export default function NavBar({ className }: NavBarProps) {
       <div className="hidden md:block">
         <NavigationMenu>
           <NavigationMenuList className="space-x-6">
-            <ButtonPrimary>
+            {pages.map(page => (
+              <ButtonPrimary key={page.href}>
+                <NavigationMenuItem>
+                  <NavigationMenuLink href={page.href}>
+                    {page.name}
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              </ButtonPrimary>
+            ))}
+            {/* <ButtonPrimary>
               <NavigationMenuItem>
                 <NavigationMenuLink href="/about">About</NavigationMenuLink>
               </NavigationMenuItem>
@@ -37,7 +52,7 @@ export default function NavBar({ className }: NavBarProps) {
                   Projects
                 </NavigationMenuLink>
               </NavigationMenuItem>
-            </ButtonPrimary>
+            </ButtonPrimary> */}
           </NavigationMenuList>
         </NavigationMenu>
       </div>
@@ -56,12 +71,20 @@ export default function NavBar({ className }: NavBarProps) {
               </SheetDescription>
             </SheetHeader>
             <div className="flex flex-col mt-6 space-y-4">
-              <ButtonPrimary>
+              {pages.map(page => (
+                <ButtonPrimary key={page.href}>
+                  <a href={page.href}>{page.name}</a>
+                </ButtonPrimary>
+              ))}
+              {/* <ButtonPrimary>
                 <a href="/about">About</a>
               </ButtonPrimary>
               <ButtonPrimary>
                 <a href="/projects">Projects</a>
               </ButtonPrimary>
+              <ButtonPrimary>
+                <a href="/contact">Contact</a>
+              </ButtonPrimary> */}
             </div>
           </SheetContent>
         </Sheet>
