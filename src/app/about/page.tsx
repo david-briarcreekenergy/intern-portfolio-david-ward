@@ -1,4 +1,6 @@
 import { LOREM_IPSUM } from '@/constants';
+import Image from 'next/image';
+
 export default function About() {
   const whoIam = `Who I Am`;
 
@@ -12,8 +14,16 @@ export default function About() {
 
   const x =
     'I am seeking new opportunities to further develop my skills and contribute to innovative projects. I am open to both full-time positions and freelance work, and I am eager to connect with like-minded professionals in the industry.';
+
+  const techStack = [
+    '/logos/react.jpg',
+    '/logos/Nextjs.png',
+    '/logos/typescript.png',
+    '/logos/js.png',
+  ];
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center h-[calc(100vh-108px)] p-8 pb-20 gap-16 sm:p-20">
+    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-[calc(100vh-108px)] p-8 pb-20 gap-16 sm:p-20">
       <main className="flex flex-col items-center row-start-2 gap-8 text-center">
         {/* Hero Section */}
         <section className="hero">
@@ -31,11 +41,23 @@ export default function About() {
         </div>
 
         {/* Tech Stack Section */}
-        <div className="max-w-2xl space-y-4 leading-relaxed text-gray-600 flex-column space-y-4text-lg dark:text-gray-300">
-          <h2 className="text-2xl font-bold text-gray-900 md:text-4xl dark:text-white">
+        <div className="max-w-2xl space-y-4">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
             Tech Stack
           </h2>
-          <p className="text-justify">{LOREM_IPSUM}</p>
+          <div className="flex flex-wrap items-center justify-center gap-6">
+            {techStack.map((logo, index) => (
+              <div key={index} className="flex items-center justify-center p-2">
+                <Image
+                  src={logo}
+                  alt={`Tech logo ${index + 1}`}
+                  width={64}
+                  height={64}
+                  className="object-contain"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </main>
     </div>
