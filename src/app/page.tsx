@@ -7,17 +7,17 @@ export default function Home() {
   const whatDoYouNeededBuilt = `What do you need built?`;
 
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-[calc(100vh-108px)] p-8 pb-20 gap-16 sm:p-20 bg-cover bg-center bg-no-repeat bg-[url('/anvil.png')]">
-      <main className="flex flex-col items-center row-start-2 gap-8 text-center">
+    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-[calc(100vh-108px)] p-4 pb-8 gap-4 sm:p-8 sm:pb-20 sm:gap-8 lg:gap-16 lg:p-20 bg-cover bg-center bg-no-repeat bg-[url('/anvil.png')]">
+      <main className="flex flex-col items-center w-full max-w-6xl row-start-2 gap-4 px-2 text-center sm:gap-6 lg:gap-8 sm:px-4">
         {/* Hero Section */}
-        <section className="0 hero">
+        <section className="w-full hero">
           <HomePageHeroCarousel />
         </section>
 
         {/* Description Section */}
         <div
           id="desc-section"
-          className="max-w-2xl space-y-4 text-lg leading-relaxed text-gray-600 dark:text-gray-300"
+          className="max-w-2xl px-2 space-y-3 text-sm leading-relaxed text-gray-600 sm:space-y-4 sm:text-base lg:text-lg dark:text-gray-300 sm:px-0"
         >
           {content.split('\n\n').map((paragraph, index) => (
             <p key={index} className="text-justify text-yellow-400">
@@ -26,8 +26,8 @@ export default function Home() {
           ))}
         </div>
 
-        <section className="hero">
-          <h1 className="text-4xl font-bold text-green-500 md:text-6xl dark:text-white">
+        <section className="w-full hero">
+          <h1 className="px-2 text-2xl font-bold text-green-500 sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl dark:text-white sm:px-0">
             {whatDoYouNeededBuilt}
           </h1>
         </section>

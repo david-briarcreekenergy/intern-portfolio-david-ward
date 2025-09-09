@@ -24,22 +24,25 @@ export default function HomePageHeroCarousel() {
   }, [api]);
 
   return (
-    <Carousel
-      setApi={setApi}
-      className="w-full max-w-4xl"
-      opts={{ loop: true }}
-    >
-      <CarouselContent className="min-w-full">
-        {attributes.map((attribute, index) => (
-          <CarouselItem key={index} className="min-w-full basis-full">
-            <h1 className="w-full px-4 text-4xl font-bold text-center text-green-500 md:text-6xl dark:text-white whitespace-nowrap">
-              {attribute}
-            </h1>
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-      {/* <CarouselPrevious /> */}
-      {/* <CarouselNext /> */}
-    </Carousel>
+    <div className="flex justify-center w-full">
+      <Carousel
+        setApi={setApi}
+        className="w-full max-w-4xl mx-auto"
+        opts={{ loop: true }}
+      >
+        <CarouselContent className="min-w-full">
+          {attributes.map((attribute, index) => (
+            <CarouselItem
+              key={index}
+              className="flex justify-center min-w-full basis-full"
+            >
+              <h1 className="w-full px-2 text-xl font-bold text-center text-green-500 break-words sm:px-4 sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl dark:text-white">
+                {attribute}
+              </h1>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
+    </div>
   );
 }
