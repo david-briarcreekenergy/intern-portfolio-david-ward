@@ -6,3 +6,15 @@ export const LOREM_IPSUM = `Lorem ipsum dolor sit amet, consectetur adipiscing e
   aliquip ex ea commodo consequat. Duis aute irure dolor in
   reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
   pariatur.`;
+
+export const MY_ATTRIBUTES = [
+  'Back End Engineer',
+  'Adaptable',
+  'Collaborative',
+  'Diligent',
+  'Tenacious',
+  'Innovative',
+  'On Time',
+  'Team Player',
+  'Perpetual Learner',
+];
