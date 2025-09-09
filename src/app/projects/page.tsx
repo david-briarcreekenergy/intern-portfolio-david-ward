@@ -1,13 +1,6 @@
 import Image from 'next/image';
 import GameDaySports from '@public/projects/gameday-sports.png';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
+import CardPrimary from '@/components/CardPrimary';
 import { LOREM_IPSUM } from '@/constants';
 
 export default function Projects() {
@@ -32,24 +25,12 @@ export default function Projects() {
                 className="rounded-lg shadow-lg"
               />
             </div>
-
-            {/* Card */}
-            <Card className="w-full">
-              <CardHeader>
-                <CardTitle>GameDay Sports</CardTitle>
-                <CardDescription>
-                  Manage Little League Baseball Tournaments
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
-                  {LOREM_IPSUM}
-                </p>
-              </CardContent>
-              <CardFooter>
-                <p className="text-sm text-gray-500">Maybe TechStack badges?</p>
-              </CardFooter>
-            </Card>
+            <CardPrimary
+              cardTitle="GameDay Sports"
+              cardDescription="Manage Little League Baseball Tournaments"
+              cardContent={LOREM_IPSUM}
+              cardFooter="Maybe TechStack badges?"
+            />
           </div>
         </section>
       </main>

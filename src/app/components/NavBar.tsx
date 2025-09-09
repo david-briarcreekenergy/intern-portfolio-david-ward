@@ -4,7 +4,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
 } from '@/components/ui/navigation-menu';
-import Link from 'next/link';
+import ButtonPrimary from './ButtonPrimary';
 interface NavBarProps {
   className?: string;
 }
@@ -13,12 +13,16 @@ export default function NavBar({ className }: NavBarProps) {
   return (
     <NavigationMenu>
       <NavigationMenuList className="space-x-6">
-        <NavigationMenuItem>
-          <NavigationMenuLink href="/about">About</NavigationMenuLink>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuLink href="/projects">Projects</NavigationMenuLink>
-        </NavigationMenuItem>
+        <ButtonPrimary>
+          <NavigationMenuItem>
+            <NavigationMenuLink href="/about">About</NavigationMenuLink>
+          </NavigationMenuItem>
+        </ButtonPrimary>
+        <ButtonPrimary>
+          <NavigationMenuItem>
+            <NavigationMenuLink href="/projects">Projects</NavigationMenuLink>
+          </NavigationMenuItem>
+        </ButtonPrimary>
       </NavigationMenuList>
     </NavigationMenu>
   );
