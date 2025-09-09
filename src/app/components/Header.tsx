@@ -1,5 +1,5 @@
 import NavBar from '@/components/NavBar';
-import DwLogo from '../../../public/dw-logo.png';
+import DwLogo from '../../../public/logos/dw-logo.png';
 import Image from 'next/image';
 
 export default function Header() {
