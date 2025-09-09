@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import GameDaySports from '@public/projects/gameday-sports.png';
 import CardPrimary from '@/components/CardPrimary';
-import { LOREM_IPSUM } from '@/constants';
 
 export default function Projects() {
   const projectsTitle = `Projects`;
