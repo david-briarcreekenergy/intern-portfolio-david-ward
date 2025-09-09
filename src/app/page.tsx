@@ -1,13 +1,6 @@
-import Image from 'next/image';
+import { LOREM_IPSUM } from '@/constants';
 
 export default function Home() {
-  const loremIpsum = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-  ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-  aliquip ex ea commodo consequat. Duis aute irure dolor in
-  reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-  pariatur.`;
-
   return (
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center h-[calc(100vh-108px)] p-8 pb-20 gap-16 sm:p-20">
       <main className="flex flex-col items-center row-start-2 gap-8 text-center">
@@ -20,7 +13,7 @@ export default function Home() {
 
         {/* Lorem Ipsum Section */}
         <div className="max-w-2xl text-lg leading-relaxed text-gray-600 dark:text-gray-300">
-          <p>{loremIpsum}</p>
+          <p>{LOREM_IPSUM}</p>
         </div>
       </main>
     </div>
