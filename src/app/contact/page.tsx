@@ -36,7 +36,6 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // TODO: Add your form submission logic here
     console.log('Form submitted:', formData);
 
     // Simulate API call
@@ -46,19 +45,21 @@ export default function Contact() {
     setFormData({ name: '', email: '', message: '' });
     setIsSubmitting(false);
 
-    // TODO: Add success message/notification
     alert('Message sent successfully!');
   };
+
+  const title = 'Contact Me';
+  const description = ` Send me a message and I\'ll get back to you soon.`;
 
   return (
     <div className="min-h-[calc(100vh-108px)] flex items-center justify-center p-4">
       <Card className="w-full max-w-md">
         <CardHeader>
           <CardTitle className="text-2xl font-bold text-center">
-            Contact Me
+            {title}{' '}
           </CardTitle>
           <CardDescription className="text-center">
-            Send me a message and I'll get back to you soon.
+            {description}
           </CardDescription>
         </CardHeader>
         <CardContent>

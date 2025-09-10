@@ -3,10 +3,8 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from '@/components/ui/carousel';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { MY_ATTRIBUTES as attributes } from '@/constants';
 import type { CarouselApi } from '@/components/ui/carousel';
 
