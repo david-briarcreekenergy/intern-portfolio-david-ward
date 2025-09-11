@@ -1,18 +1,25 @@
-import { Button } from '@/components/ui/button';
-import { ReactNode } from 'react';
+import { Button } from "@/components/ui/button";
+import { ReactNode, forwardRef } from "react";
 
 interface ButtonPrimaryProps {
   children: ReactNode;
 }
 
-export default function ButtonPrimary({ children }: ButtonPrimaryProps) {
-  return (
-    <Button
-      asChild
-      variant="default"
-      className="text-white bg-green-800 focus:bg-green-800 hover:bg-green-800 hover:ring-2 hover:ring-green-400 focus:ring-2 focus:ring-green-400"
-    >
-      {children}
-    </Button>
-  );
-}
+const ButtonPrimary = forwardRef<HTMLButtonElement, ButtonPrimaryProps>(
+  ({ children }, ref) => {
+    return (
+      <Button
+        ref={ref}
+        asChild
+        variant="default"
+        className="cursor-pointer font-mono text-white hover:text-emerald-300 text-md md:text-md lg:text-lg"
+      >
+        {children}
+      </Button>
+    );
+  }
+);
+
+ButtonPrimary.displayName = "ButtonPrimary";
+
+export default ButtonPrimary;

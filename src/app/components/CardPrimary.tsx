@@ -33,7 +33,7 @@ export default function CardPrimary({
 
       {cardContent && (
         <CardContent>
-          <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+          <p className="text-sm leading-relaxed text-neutral-400">
             {cardContent}
           </p>
         </CardContent>
