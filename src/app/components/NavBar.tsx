@@ -53,12 +53,13 @@ export default function NavBar({}: NavBarProps) {
           </SheetTrigger>
           <SheetContent>
             <SheetHeader>
-              <SheetTitle>What do you want to see?</SheetTitle>
-              <SheetDescription>
-                Navigate to different sections of the portfolio
-              </SheetDescription>
+              <SheetTitle></SheetTitle>
+              <SheetDescription></SheetDescription>
             </SheetHeader>
             <div className="flex flex-col mt-6 space-y-4">
+              <ButtonPrimary key="home">
+                <a href="">Home</a>
+              </ButtonPrimary>
               {pages.map(page => (
                 <ButtonPrimary key={page.href}>
                   <a href={page.href}>{page.name}</a>
