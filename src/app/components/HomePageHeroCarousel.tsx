@@ -34,7 +34,7 @@ export default function HomePageHeroCarousel() {
               key={index}
               className="flex justify-center min-w-full basis-full"
             >
-              <h1 className="w-full px-2 text-xl font-bold text-center text-green-500 break-words sm:px-4 sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl dark:text-white">
+              <h1 className="w-full px-2 text-xl font-bold text-center text-green-500 break-words sm:px-4 sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl">
                 {attribute}
               </h1>
             </CarouselItem>

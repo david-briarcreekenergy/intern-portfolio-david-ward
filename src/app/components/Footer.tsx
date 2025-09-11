@@ -1,26 +1,10 @@
 import Image from 'next/image';
-import GitHubLogo from '@public/logos/github-mark-white.png';
-import LinkedInLogo from '@public/logos/InBug-White.png';
 
 export default function Footer() {
   return (
-    <footer className="flex items-center justify-between w-full px-20 py-2 text-white bg-gray-800">
-      <p>© 2024 David Ward. All rights reserved.</p>
-      <div className="flex space-x-4">
-        <Image
-          src={GitHubLogo}
-          alt="GitHub Logo"
-          width={24}
-          height={24}
-          className="ml-2"
-        />
-        <Image
-          src={LinkedInLogo}
-          alt="LinkedIn Logo"
-          width={24}
-          height={24}
-          className="ml-2"
-        />
+    <footer className="flex items-center justify-center w-full px-3 py-3 text-white bg-gradient-to-r from-neutral-800 via-neutral-900 via-50% to-neutral-950 to-95% border border-t-neutral-900 sm:justify-between sm:px-8 md:px-20">
+      <p className="text-xs sm:text-sm text-center sm:text-left">© 2024 David Ward. All rights reserved.</p>
+      <div className="hidden sm:flex space-x-4">
       </div>
     </footer>
   );
