@@ -86,7 +86,6 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // TODO: Add your form submission logic here
     console.log('Form submitted:', formData);
 
     // Simulate API call
@@ -96,9 +95,11 @@ export default function Contact() {
     setFormData({ name: '', email: '', message: '' });
     setIsSubmitting(false);
 
-    // TODO: Add success message/notification
     alert('Message sent successfully!');
   };
+
+  const title = 'Contact Me';
+  const description = ` Send me a message and I\'ll get back to you soon.`;
 
   return (
     <div className="min-h-[calc(100vh-108px)] flex flex-col items-center justify-center p-3 bg-gradient-to-tr from-neutral-800 via-neutral-950 to-black gap-4 sm:p-4 sm:gap-8 relative">
@@ -123,11 +124,11 @@ export default function Contact() {
         className="w-full max-w-sm sm:max-w-md bg-gradient-to-tr from-neutral-900 via-neutral-950 to-black opacity-0 relative z-10"
       >
         <CardHeader>
-          {/* <CardTitle className="text-xl md:text-2xl lg:text-3xl font-bold text-center text-white font-mono">
-            Contact Me
-          </CardTitle> */}
-          <CardDescription className="text-center text-sm sm:text-md text-white font-sans">
-            Send me a message and I'll get back to you soon.
+          <CardTitle className="text-2xl font-bold text-center">
+            {title}{' '}
+          </CardTitle>
+          <CardDescription className="text-center">
+            {description}
           </CardDescription>
         </CardHeader>
         <CardContent>

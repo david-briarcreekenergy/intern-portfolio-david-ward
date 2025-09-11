@@ -25,7 +25,7 @@ const pages = [
   { name: 'Contact', href: '/contact' },
 ];
 
-export default function NavBar({ className }: NavBarProps) {
+export default function NavBar({}: NavBarProps) {
   return (
     <nav className="flex items-center justify-between w-full px-6 py-4">
       {/* Desktop Navigation */}

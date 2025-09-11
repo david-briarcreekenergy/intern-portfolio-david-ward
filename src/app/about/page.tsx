@@ -1,6 +1,5 @@
 'use client';
 
-import { LOREM_IPSUM } from '@/constants';
 import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
