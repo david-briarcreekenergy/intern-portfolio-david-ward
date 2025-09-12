@@ -1,18 +1,15 @@
 'use client';
 
-// import HomePageHeroCarousel from './components/HomePageHeroCarousel';
 import TextType from './components/ui/TextType';
 import ButtonPrimary from './components/ButtonPrimary';
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import Particles from '../app/components/ui/Particles';
+import Particles from '@/components/ui/Particles';
 
 export default function Home() {
   const heroRef = useRef<HTMLDivElement>(null);
   const descRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLDivElement>(null);
-
-  const content = `I am a blacksmith. I write code for the benefit of the client. The joy of the job comes when they say to me, "Do you know how much easier my job is because of your work? I consider the fact that much of my work is invisible to be a compliment. It means I have done my job well. I am not the star of the show, but the enabler of the star of the show. I am adaptable, collaborative, diligent, tenacious, innovative, and on time."`;
 
   {
     /* TextType Component */
@@ -125,14 +122,15 @@ export default function Home() {
           className="max-w-2xl px-1 space-y-3 text-sm leading-relaxed text-gray-600 sm:space-y-4 sm:text-base lg:text-lg sm:px-2"
         >
           <p className="text-center text-neutral-400">
-            I am a blacksmith. I write code for the benefit of the client. The
-            joy of the job comes when they say to me,
+            {`I am a blacksmith. I write code for the benefit of the client. The
+            joy of the job comes when they say to me,`}
             <span className="text-white">
-              "Do you know how much easier my job is because of your work?"
+              {' '}
+              {` "Do you know how much easier my job is because of your work?"`}
             </span>{' '}
-            I consider the fact that much of my work is invisible to be a
+            {`I consider the fact that much of my work is invisible to be a
             compliment. It means I have done my job well. I am not the star of
-            the show, but the enabler of the star of the show. I am{' '}
+            the show, but the enabler of the star of the show. I am`}{' '}
             <span className="text-white">
               adaptable, collaborative, diligent, tenacious, innovative, and on
               time
@@ -148,13 +146,13 @@ export default function Home() {
               href="/contact"
               className="block px-4 py-2 text-sm sm:px-6 sm:py-3 sm:text-base"
             >
-              Let's Work Together
+              {`Let\'s Work Together`}
             </a>
           </ButtonPrimary>
         </div>
 
         <section className="w-full hero">
-          <h1 className="px-2 text-2xl font-bold text-green-500 sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl dark:text-white sm:px-0">
+          <h1 className="px-2 text-2xl font-bold text-emerald-400 sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl dark:text-white sm:px-0">
             {whatDoYouNeededForged}
           </h1>
         </section>

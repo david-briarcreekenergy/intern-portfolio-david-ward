@@ -31,14 +31,15 @@ export default function Contact() {
   useEffect(() => {
     const tl = gsap.timeline();
 
-    tl.fromTo(cardRef.current, 
-      { opacity: 0, y: 50, scale: 0.9 }, 
-      { opacity: 1, y: 0, scale: 1, duration: 0.8, ease: "back.out(1.7)" }
-    )
-    .fromTo(formRef.current, 
-      { opacity: 0 }, 
-      { opacity: 1, duration: 0.6, ease: "power2.out" }, 
-      "-=0.3"
+    tl.fromTo(
+      cardRef.current,
+      { opacity: 0, y: 50, scale: 0.9 },
+      { opacity: 1, y: 0, scale: 1, duration: 0.8, ease: 'back.out(1.7)' },
+    ).fromTo(
+      formRef.current,
+      { opacity: 0 },
+      { opacity: 1, duration: 0.6, ease: 'power2.out' },
+      '-=0.3',
     );
 
     // Add hover animation to submit button
@@ -49,7 +50,7 @@ export default function Contact() {
           y: -5,
           scale: 1.05,
           duration: 0.3,
-          ease: "power2.out"
+          ease: 'power2.out',
         });
       };
 
@@ -58,7 +59,7 @@ export default function Contact() {
           y: 0,
           scale: 1,
           duration: 0.3,
-          ease: "power2.out"
+          ease: 'power2.out',
         });
       };
 
@@ -104,7 +105,7 @@ export default function Contact() {
   return (
     <div className="min-h-[calc(100vh-108px)] flex flex-col items-center justify-center p-3 bg-gradient-to-tr from-neutral-800 via-neutral-950 to-black gap-4 sm:p-4 sm:gap-8 relative">
       {/* Full-screen particles background */}
-      <div className="absolute inset-0 w-full h-full z-0">
+      <div className="absolute inset-0 z-0 w-full h-full">
         <Particles
           particleColors={['#ffffff', '#ffffff']}
           particleCount={300}
@@ -116,12 +117,12 @@ export default function Contact() {
           disableRotation={false}
         />
       </div>
-      <h1 className="text-2xl font-bold text-emerald-400 tracking-wide font-mono sm:text-4xl md:text-6xl relative z-10">
+      <h1 className="relative z-10 font-mono text-2xl font-bold tracking-wide text-emerald-400 sm:text-4xl md:text-6xl">
         Contact Me
       </h1>
-      <Card 
+      <Card
         ref={cardRef}
-        className="w-full max-w-sm sm:max-w-md bg-gradient-to-tr from-neutral-900 via-neutral-950 to-black opacity-0 relative z-10"
+        className="relative z-10 w-full max-w-sm opacity-0 sm:max-w-md bg-gradient-to-tr from-neutral-900 via-neutral-950 to-black"
       >
         <CardHeader>
           <CardTitle className="text-2xl font-bold text-center">
@@ -132,9 +133,9 @@ export default function Contact() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <form 
+          <form
             ref={formRef}
-            onSubmit={handleSubmit} 
+            onSubmit={handleSubmit}
             className="space-y-4 opacity-0"
           >
             <div className="space-y-2">
@@ -173,11 +174,16 @@ export default function Contact() {
                 value={formData.message}
                 onChange={handleChange}
                 required
+                className="text-gray-300"
               />
             </div>
 
             <ButtonPrimary ref={submitButtonRef}>
-              <button type="submit" className="w-full font-medium text-sm sm:text-base py-2 sm:py-3" disabled={isSubmitting}>
+              <button
+                type="submit"
+                className="w-full py-2 text-sm font-medium sm:text-base sm:py-3"
+                disabled={isSubmitting}
+              >
                 {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
             </ButtonPrimary>

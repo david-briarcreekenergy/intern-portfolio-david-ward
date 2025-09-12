@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
-import { ReactNode, forwardRef } from "react";
+import { Button } from '@/components/ui/button';
+import { ReactNode, forwardRef } from 'react';
 
 interface ButtonPrimaryProps {
   children: ReactNode;
@@ -12,14 +12,14 @@ const ButtonPrimary = forwardRef<HTMLButtonElement, ButtonPrimaryProps>(
         ref={ref}
         asChild
         variant="default"
-        className="cursor-pointer font-mono text-white hover:text-emerald-300 text-md md:text-md lg:text-lg"
+        className="font-mono text-white cursor-pointer hover:text-emerald-300 text-md md:text-md lg:text-lg"
       >
         {children}
       </Button>
     );
-  }
+  },
 );
 
-ButtonPrimary.displayName = "ButtonPrimary";
+ButtonPrimary.displayName = 'ButtonPrimary';
 
 export default ButtonPrimary;

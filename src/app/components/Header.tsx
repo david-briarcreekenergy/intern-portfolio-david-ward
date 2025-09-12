@@ -26,7 +26,7 @@ export default function Header() {
           <NavBar />
         </div>
 
-        <div className="items-center hidden gap-2 sm:flex">
+        {/*   <div className="items-center hidden gap-2 sm:flex">
           <div className="p-1 transition duration-300 ease-in-out delay-150 rounded-md shadow hover:translate-y-1 hover:scale-110 bg-primary">
             <Link href="https://github.com/david-briarcreekenergy">
               <Image
@@ -49,7 +49,7 @@ export default function Header() {
               />
             </Link>
           </div>
-        </div>
+        </div> */}
       </div>
     </header>
   );

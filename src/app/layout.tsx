@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: `DW Designs`,
+  title: `DW Codesmith`,
   description:
     'A portfolio site for David Ward, a back-end software developer.',
 };
