@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 
 interface LogoLoopProps {
@@ -10,13 +10,35 @@ interface LogoLoopProps {
 
 export default function LogoLoop({ className = '' }: LogoLoopProps) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Check if mobile on mount and resize
+  useEffect(() => {
+    const checkMobile = () => {
+      // Consider both width and height for better mobile detection
+      const isMobileDevice =
+        window.innerWidth < 768 ||
+        (window.innerWidth < 1024 && window.innerHeight < 768);
+      setIsMobile(isMobileDevice);
+    };
+
+    // Check on mount
+    checkMobile();
+
+    // Add resize listener
+    window.addEventListener('resize', checkMobile);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+    };
+  }, []);
 
   const logos = [
     { src: '/logos/nextjs-icon-light-background.png', alt: 'Next.js' },
     { src: '/logos/Tailwind CSS.svg', alt: 'Tailwind CSS' },
     { src: '/logos/React.svg', alt: 'React' },
     { src: '/logos/MongoDB.svg', alt: 'MongoDB' },
-    // { src: '/logos/Express.svg', alt: 'Express.js' },
     { src: '/logos/PHP.svg', alt: 'PHP' },
     { src: '/logos/laravel.svg', alt: 'Laravel' },
     { src: '/logos/Vue.js.svg', alt: 'Vue.js' },
@@ -30,15 +52,12 @@ export default function LogoLoop({ className = '' }: LogoLoopProps) {
     const container = containerRef.current;
     const logoElements = container.querySelectorAll('.logo-item');
 
-    // Responsive settings based on screen size
-    const isMobile = window.innerWidth < 768;
-
-    // Mobile settings for better spacing and positioning
-    const staggerDelay = isMobile ? 3 : 2;
-    const animationDuration = isMobile ? 25 : 20;
-    const startPosition = isMobile ? '100vw' : '50vw';
-    const endPosition = isMobile ? '-100vw' : '-50vw';
-    const loopGap = isMobile ? 3 : 0; // Gap between loop cycles on mobile
+    // Mobile settings for better spacing and positioning (including landscape)
+    const staggerDelay = isMobile ? 4 : 2; // Increased spacing for mobile landscape
+    const animationDuration = isMobile ? 30 : 20; // Slower for better visibility
+    const startPosition = isMobile ? '120vw' : '50vw'; // Start further right on mobile
+    const endPosition = isMobile ? '-120vw' : '-50vw'; // Exit further left on mobile
+    const loopGap = isMobile ? 4 : 0; // Longer gap between loop cycles on mobile
 
     const tl = gsap.timeline({ repeat: -1 });
 
@@ -57,7 +76,7 @@ export default function LogoLoop({ className = '' }: LogoLoopProps) {
     return () => {
       tl.kill();
     };
-  }, []);
+  }, [isMobile]);
 
   return (
     <div
@@ -75,9 +94,8 @@ export default function LogoLoop({ className = '' }: LogoLoopProps) {
             <Image
               src={logo.src}
               alt={logo.alt}
-              width={50}
-              height={100}
-              style={{ width: 'auto', height: 'auto' }}
+              width={isMobile ? 40 : 60}
+              height={isMobile ? 80 : 120}
               className="object-contain filter brightness-75 hover:brightness-100 transition-all duration-300 sm:w-[60px] sm:h-[120px] md:w-[75px] md:h-[150px]"
             />
           </div>

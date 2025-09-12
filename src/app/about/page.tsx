@@ -16,7 +16,7 @@ export default function About() {
 
   const background = `Having 5+ years of web development experience, I have primarily been a CRM developer utilizing PHP with Laravel for server-side business logic.  I make extensive use of MySql, and am daily writing complex queries to pull data my clients want to see.  I have employed both Vue.js and React front-end frameworks, harnessing assets such Material UI, Tailwind CSS, and PrimeVue to provide the best UI/UX  I can. I am well versed in consuming APIs as I spent 3+ years as the lead developer managing the Adobe Sign API for a former employer.`;
 
-  const recently = `Recently, I have been expanding my skill set by learning Next.js and TypeScript, and I am excited to apply these technologies in future projects. `;
+  /*   const recently = `Recently, I have been expanding my skill set by learning Next.js and TypeScript, and I am excited to apply these technologies in future projects. `; */
 
   const currently = `Currently, I am working on GameDay Sports, a Little League Baseball tournament management application.  It will allow the client to manage teams, players, schedules, and scores for multiple tournaments.  It is being built with a Next.js front-end and express.js backend.  The application is still in the early stages of development, but I am excited about the potential it has to streamline tournament management for my client.`;
 
@@ -88,14 +88,14 @@ export default function About() {
           >
             {background}
           </p>
-          <p
+          {/*  <p
             ref={el => {
               paragraphsRef.current[2] = el;
             }}
             className="text-justify opacity-0"
           >
             {recently}
-          </p>
+          </p> */}
           <p
             ref={el => {
               paragraphsRef.current[3] = el;
