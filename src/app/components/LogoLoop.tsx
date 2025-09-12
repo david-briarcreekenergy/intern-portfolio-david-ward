@@ -30,23 +30,27 @@ export default function LogoLoop({ className = '' }: LogoLoopProps) {
     const container = containerRef.current;
     const logoElements = container.querySelectorAll('.logo-item');
 
-    // Calculate timing for seamless loop
-    // const logoCount = logoElements.length;
-    const staggerDelay = 2; // Time between each logo starting (reduced for tighter spacing)
-    // const totalCycleDuration = logoCount * staggerDelay; // Total time for one complete cycle
-    const animationDuration = 20; // Time for each logo to cross the screen (increased for slower movement)
+    // Responsive settings based on screen size
+    const isMobile = window.innerWidth < 768;
+
+    // Mobile settings for better spacing and positioning
+    const staggerDelay = isMobile ? 3 : 2;
+    const animationDuration = isMobile ? 25 : 20;
+    const startPosition = isMobile ? '100vw' : '50vw';
+    const endPosition = isMobile ? '-100vw' : '-50vw';
+    const loopGap = isMobile ? 3 : 0; // Gap between loop cycles on mobile
 
     const tl = gsap.timeline({ repeat: -1 });
 
-    // Set initial position off-screen to the right
-    tl.set(logoElements, { x: '50vw' }).to(logoElements, {
-      x: '-50vw',
+    // Set initial position based on device
+    tl.set(logoElements, { x: startPosition }).to(logoElements, {
+      x: endPosition,
       duration: animationDuration,
       ease: 'none',
       stagger: {
         each: staggerDelay,
         repeat: -1,
-        repeatDelay: 0,
+        repeatDelay: loopGap,
       },
     });
 
@@ -73,6 +77,7 @@ export default function LogoLoop({ className = '' }: LogoLoopProps) {
               alt={logo.alt}
               width={50}
               height={100}
+              style={{ width: 'auto', height: 'auto' }}
               className="object-contain filter brightness-75 hover:brightness-100 transition-all duration-300 sm:w-[60px] sm:h-[120px] md:w-[75px] md:h-[150px]"
             />
           </div>
