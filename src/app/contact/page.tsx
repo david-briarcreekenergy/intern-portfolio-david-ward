@@ -2,18 +2,18 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import ButtonPrimary from '../components/ButtonPrimary';
-import Particles from '../components/ui/Particles';
+import { Input } from '@components/ui/input';
+import { Label } from '@components/ui/label';
+import { Textarea } from '@components/ui/textarea';
+import ButtonPrimary from '@components/ButtonPrimary';
+import Particles from '@components/ui/Particles';
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
+} from '@components/ui/card';
 
 export default function Contact() {
   const cardRef = useRef<HTMLDivElement>(null);
