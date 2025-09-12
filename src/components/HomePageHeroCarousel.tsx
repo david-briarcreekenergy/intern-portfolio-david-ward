@@ -3,10 +3,10 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-} from '@/components/ui/carousel';
+} from '@components/ui/carousel';
 import { useEffect, useState } from 'react';
 import { MY_ATTRIBUTES as attributes } from '@root/src/constants';
-import type { CarouselApi } from '@/components/ui/carousel';
+import type { CarouselApi } from '@components/ui/carousel';
 
 export default function HomePageHeroCarousel() {
   const [api, setApi] = useState<CarouselApi>();
