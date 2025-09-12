@@ -42,7 +42,7 @@ importers:
         specifier: ^8.6.0
         version: 8.6.0(react@19.1.0)
       gsap:
-        specifier: ^3.13.0
+        specifier: 3.13.0
         version: 3.13.0
       iconoir-react:
         specifier: ^7.11.0
