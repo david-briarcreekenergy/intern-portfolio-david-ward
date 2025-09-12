@@ -31,7 +31,10 @@
       ],
       "@public/*": [
         "./public/*"
-      ]
+      ],
+      "@components/*": [
+        "./src/components/*"
+      ],
     }
   },
   "include": [
