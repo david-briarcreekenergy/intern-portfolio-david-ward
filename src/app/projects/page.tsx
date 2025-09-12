@@ -2,10 +2,10 @@
 
 import Image from 'next/image';
 import GameDaySports from '@public/projects/gameday-sports.png';
-import CardPrimary from '@/components/CardPrimary';
+import CardPrimary from '@components/CardPrimary';
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import Particles from '../components/ui/Particles';
+import Particles from '@components/ui/Particles';
 
 export default function Projects() {
   const titleRef = useRef(null);
@@ -19,26 +19,29 @@ export default function Projects() {
   useEffect(() => {
     const tl = gsap.timeline();
 
-    tl.fromTo(titleRef.current, 
-      { opacity: 0, y: -30 }, 
-      { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }
+    tl.fromTo(
+      titleRef.current,
+      { opacity: 0, y: -30 },
+      { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' },
     )
-    .fromTo(imageRef.current, 
-      { opacity: 0, x: -50, rotation: -5 }, 
-      { opacity: 1, x: 0, rotation: 0, duration: 1, ease: "back.out(1.7)" }, 
-      "-=0.3"
-    )
-    .fromTo(cardRef.current, 
-      { opacity: 0, x: 50 }, 
-      { opacity: 1, x: 0, duration: 0.8, ease: "power2.out" }, 
-      "-=0.5"
-    );
+      .fromTo(
+        imageRef.current,
+        { opacity: 0, x: -50, rotation: -5 },
+        { opacity: 1, x: 0, rotation: 0, duration: 1, ease: 'back.out(1.7)' },
+        '-=0.3',
+      )
+      .fromTo(
+        cardRef.current,
+        { opacity: 0, x: 50 },
+        { opacity: 1, x: 0, duration: 0.8, ease: 'power2.out' },
+        '-=0.5',
+      );
   }, []);
 
   return (
     <div className="font-sans grid grid-rows-[10px_1fr_10px] items-center justify-items-center min-h-[calc(100vh-108px)] p-3 pb-8 gap-4 sm:grid-rows-[20px_1fr_20px] sm:p-8 sm:pb-20 sm:gap-16 lg:p-20 bg-gradient-to-tr from-neutral-800 via-neutral-950 to-black relative">
       {/* Full-screen particles background */}
-      <div className="absolute inset-0 w-full h-full z-0">
+      <div className="absolute inset-0 z-0 w-full h-full">
         <Particles
           particleColors={['#ffffff', '#ffffff']}
           particleCount={300}
@@ -50,12 +53,12 @@ export default function Projects() {
           disableRotation={false}
         />
       </div>
-      <main className="flex flex-col items-center row-start-2 gap-4 text-center sm:gap-8 relative z-10">
+      <main className="relative z-10 flex flex-col items-center row-start-2 gap-4 text-center sm:gap-8">
         {/* Hero Section */}
         <section className="hero">
-          <h1 
+          <h1
             ref={titleRef}
-            className="text-2xl font-bold text-emerald-400 tracking-wide font-mono sm:text-4xl md:text-6xl opacity-0"
+            className="font-mono text-2xl font-bold tracking-wide opacity-0 text-emerald-400 sm:text-4xl md:text-6xl"
           >
             {projectsTitle}
           </h1>
@@ -65,20 +68,17 @@ export default function Projects() {
         <section className="w-full max-w-6xl px-2 sm:px-0">
           <div className="grid items-center grid-cols-1 gap-4 sm:gap-8 md:grid-cols-2">
             {/* Image */}
-            <div 
+            <div
               ref={imageRef}
-              className="flex justify-center opacity-0 order-2 md:order-1"
+              className="flex justify-center order-2 opacity-0 md:order-1"
             >
               <Image
                 src={GameDaySports}
                 alt="GameDay Sports Project Image"
-                className="rounded-lg shadow-lg w-full max-w-sm sm:max-w-md md:max-w-full"
+                className="w-full max-w-sm rounded-lg shadow-lg sm:max-w-md md:max-w-full"
               />
             </div>
-            <div 
-              ref={cardRef}
-              className="opacity-0 order-1 md:order-2"
-            >
+            <div ref={cardRef} className="order-1 opacity-0 md:order-2">
               <CardPrimary
                 cardTitle="GameDay Sports"
                 cardDescription="Manage Little League Baseball Tournaments"
