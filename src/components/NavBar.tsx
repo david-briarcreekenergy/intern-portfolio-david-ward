@@ -7,7 +7,7 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-} from '@/components/ui/navigation-menu';
+} from '@components/ui/navigation-menu';
 import {
   Sheet,
   SheetContent,
@@ -15,8 +15,8 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from '@/components/ui/sheet';
-import HamburgerButton from '@/components/ui/hamburger-button';
+} from '@components/ui/sheet';
+import HamburgerButton from '@components/ui/hamburger-button';
 import ButtonPrimary from './ButtonPrimary';
 import Link from 'next/link';
 import Image from 'next/image';

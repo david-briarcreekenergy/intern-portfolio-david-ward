@@ -1,6 +1,6 @@
-import NavBar from '@/components/NavBar';
+import NavBar from '@components/NavBar';
 import DwLogo from '@public/logos/dw-anvil-transparent.png';
-import { MY_NAME } from '@/constants';
+import { MY_NAME } from '@root/src/constants';
 import Image from 'next/image';
 import Link from 'next/link';
 import GitHubLogo from '@public/logos/github-mark-white.png';

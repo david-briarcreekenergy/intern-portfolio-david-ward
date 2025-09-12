@@ -1,10 +1,11 @@
 'use client';
 
-import TextType from './components/ui/TextType';
-import ButtonPrimary from './components/ButtonPrimary';
+import TextType from '@components/ui/TextType';
+import ButtonPrimary from '@components/ButtonPrimary';
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import Particles from '@/components/ui/Particles';
+import Particles from '@components/ui/Particles';
+import { MY_ATTRIBUTES } from '../constants';
 
 export default function Home() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -15,6 +16,8 @@ export default function Home() {
     /* TextType Component */
   }
   const whatDoYouNeededForged = `What do you need forged?`;
+
+  const attributes = MY_ATTRIBUTES.map(attr => attr.toLowerCase()).join(', ');
 
   useEffect(() => {
     const tl = gsap.timeline();
@@ -131,11 +134,7 @@ export default function Home() {
             {`I consider the fact that much of my work is invisible to be a
             compliment. It means I have done my job well. I am not the star of
             the show, but the enabler of the star of the show. I am`}{' '}
-            <span className="text-white">
-              adaptable, collaborative, diligent, tenacious, innovative, and on
-              time
-            </span>
-            .
+            <span className="text-white">{attributes}</span>.
           </p>
         </section>
 

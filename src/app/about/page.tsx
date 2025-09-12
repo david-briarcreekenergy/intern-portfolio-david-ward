@@ -2,8 +2,8 @@
 
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import LogoLoop from '../components/LogoLoop';
-import Particles from '../components/ui/Particles';
+import LogoLoop from '@components/LogoLoop';
+import Particles from '@components/ui/Particles';
 
 export default function About() {
   const titleRef = useRef(null);

@@ -5,7 +5,7 @@ import {
   CarouselItem,
 } from '@/components/ui/carousel';
 import { useEffect, useState } from 'react';
-import { MY_ATTRIBUTES as attributes } from '@/constants';
+import { MY_ATTRIBUTES as attributes } from '@root/src/constants';
 import type { CarouselApi } from '@/components/ui/carousel';
 
 export default function HomePageHeroCarousel() {
